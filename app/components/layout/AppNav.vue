@@ -7,7 +7,7 @@
       to="/"
       class="text-[15px] font-extrabold tracking-wide text-terminal-green hover:text-terminal-green transition-colors"
     >
-      <span class="text-noir-500">~/</span>dev.portfolio
+      <span class="text-noir-500">~/</span>ala.ahmed
     </NuxtLink>
 
     <!-- Desktop links -->

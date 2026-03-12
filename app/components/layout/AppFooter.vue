@@ -5,10 +5,10 @@
     <span>
       Built with
       <span class="text-terminal-green">♥</span>
-      + Nuxt 4 &amp; Express — {{ year }}
+      + Nuxt 4 {{ year }}
     </span>
     <span>
-      ~/dev.portfolio
+      ~/ala.ahmed
       <span class="text-terminal-green">v1.0.0</span>
     </span>
   </footer>

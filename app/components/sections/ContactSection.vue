@@ -29,7 +29,7 @@
         </div>
       </div>
 
-      <!-- Form -->
+      <!-- Form 
       <form class="flex flex-col gap-4" @submit.prevent="handleSubmit">
         <div
           v-for="field in fields"
@@ -69,7 +69,7 @@
         >
           {{ sent ? "> message sent ✓" : "./send_message.sh ↗" }}
         </button>
-      </form>
+      </form>-->
     </div>
   </section>
 </template>

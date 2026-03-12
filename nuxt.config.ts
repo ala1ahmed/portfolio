@@ -34,7 +34,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       siteUrl: "https://yourname.dev",
-      siteName: "Your Name — Full Stack JS Developer",
+      siteName: "Ala Ahmed — Full Stack JS Developer",
       siteDescription:
         "Full Stack JavaScript developer specializing in Nuxt.js, Express.js, PostgreSQL & MongoDB. Based in Tunis, Tunisia.",
       twitterHandle: "@yourhandle",
