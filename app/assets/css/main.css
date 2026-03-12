@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Base resets ─────────────────────────────── */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    @apply font-mono;
+  }
+
+  body {
+    @apply bg-noir-950 text-[#c8c8c8]
+           transition-colors duration-300;
+  }
+
+  ::selection {
+    @apply bg-terminal-green/20 text-terminal-green;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-noir-950;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-terminal-green rounded-full;
+  }
+}
+
+/* ── Scanline overlay (dark mode only) ───────── */
+@layer utilities {
+  .scanlines::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.06) 2px,
+      rgba(0, 0, 0, 0.06) 4px
+    );
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  /* Terminal cursor blink */
+  .cursor-blink {
+    @apply inline-block w-2.5 h-[18px] bg-terminal-green align-middle ml-1
+           animate-blink;
+    box-shadow: 0 0 6px theme("colors.terminal.green");
+  }
+
+  /* Glow text helpers */
+  .text-glow-green {
+    text-shadow:
+      0 0 8px theme("colors.terminal.green"),
+      0 0 20px theme("colors.terminal.green");
+  }
+  .text-glow-cyan {
+    text-shadow: 0 0 8px theme("colors.terminal.cyan");
+  }
+
+  /* Section fade-in (JS-triggered) */
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+      opacity 0.55s ease,
+      transform 0.55s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Grid background */
+  .bg-grid {
+    background-image: theme("backgroundImage.grid-terminal");
+    background-size: theme("backgroundSize.grid");
+  }
+  .light .bg-grid,
+  .bg-grid-light {
+    background-image: theme("backgroundImage.grid-light");
+    background-size: theme("backgroundSize.grid");
+  }
+}
